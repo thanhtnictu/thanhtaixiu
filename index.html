@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    
+    <figure class="wp-block-audio"><audio controls="" src="https://gospeltelegraph.store/wp-content/uploads/music/2021/12/Abba_-_Happy_New_Year.mp3"></audio></figure>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tài xỉu</title>
+    <!--Google Font-->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap" rel="stylesheet">
+    <!--Stylesheet-->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    
+    <div class="container">
+        <div class="dice-wrapper">
+            <img  id="die-1">
+            <img  id="die-2">
+            <img  id="die-3">
+        </div>
+        <p id="total"></p>
+        <button onclick="roll()">Thử vận may nào</button>
+    </div>
+    <!--Script-->
+    <script src="script.js"></script>
+    <body style="height: 200px">
+
+        <p> .</p>
+      
+        <img src="img/dia.png" style="cursor:pointer" width="528" height="262" id="ball">
+      
+      
+        <script>
+          ball.onmousedown = function(event) {
+            ball.style.position = 'absolute';
+            ball.style.zIndex = 1000;
+            document.body.appendChild(ball);
+      
+            moveAt(event.pageX, event.pageY);
+      
+            function moveAt(pageX, pageY) {
+              ball.style.left = pageX - ball.offsetWidth / 2 + 'px';
+              ball.style.top = pageY - ball.offsetHeight / 2 + 'px';
+            }
+      
+            function onMouseMove(event) {
+              moveAt(event.pageX, event.pageY);
+            }
+      
+            document.addEventListener('mousemove', onMouseMove);
+      
+            ball.onmouseup = function() {
+              document.removeEventListener('mousemove', onMouseMove);
+              ball.onmouseup = null;
+            };
+      
+          };
+      
+      
+          ball.ondragstart = function() {
+            return false;
+          };
+        </script>
+      
+      
+      </body>
+</body>
+</html>
